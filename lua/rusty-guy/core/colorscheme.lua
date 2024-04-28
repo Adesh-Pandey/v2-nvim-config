@@ -35,3 +35,5 @@ vim.cmd([[
 vim.cmd([[
 hi clear NormalNC
 ]])
+-- Unset background color for the tree explorer
+vim.cmd([[highlight NvimTreeNormal guibg=NONE]])

@@ -1,37 +1,37 @@
-local opt =vim.opt
+local opt = vim.opt
 
 -- line numbers
 
-opt.relativenumber=true
-opt.number=true
+opt.relativenumber = true
+opt.number = true
 
 -- tabs & indentation
 
-opt.tabstop=4
-opt.shiftwidth=4
-opt.expandtab=true
-opt.autoindent=true
+opt.tabstop = 4
+opt.shiftwidth = 4
+opt.expandtab = true
+opt.autoindent = true
 
 -- line wraping
 
-opt.wrap=false
+opt.wrap = false
 
 -- search settings
 
-opt.ignorecase=true
-opt.smartcase=true
+opt.ignorecase = true
+opt.smartcase = true
 
--- cursor line 
+-- cursor line
 
-opt.cursorline=false
+opt.cursorline = false
 
 -- appreance
 
-opt.termguicolors=true
-opt.background="dark"
-opt.signcolumn="yes"
+opt.termguicolors = true
+opt.background = "dark"
+opt.signcolumn = "yes"
 
--- backspace 
+-- backspace
 
 opt.backspace = "indent,eol,start"
 
@@ -39,13 +39,9 @@ opt.backspace = "indent,eol,start"
 
 opt.clipboard:append("unnamedplus")
 
-
 -- split windows
 
 opt.splitright = true
 opt.splitbelow = true
 
 opt.iskeyword:append("-")
-
-
-
