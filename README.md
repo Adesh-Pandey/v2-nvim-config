@@ -7,4 +7,4 @@ Hoping to be more proficient in it.
 
 I had some Packer problems with telescope, so switched to lazy. But it - I think - was the issue with loading order causing circular dependency.
 
-also includes tmux config.
+Also includes tmux config.
