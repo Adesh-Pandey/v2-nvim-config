@@ -1,10 +1,4 @@
-# nvim-config
+# 💤 LazyVim
 
-Personal nvim config
-
-Starting vim journey. As a side text editor so may not be fast. But will be updating timely as I add on plugins.
-Hoping to be more proficient in it.
-
-I had some Packer problems with telescope, so switched to lazy. But it - I think - was the issue with loading order causing circular dependency.
-
-Also includes tmux config.
+A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
+Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
