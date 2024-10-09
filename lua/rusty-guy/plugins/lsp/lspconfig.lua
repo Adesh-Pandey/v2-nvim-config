@@ -114,3 +114,8 @@ lspconfig["lua_ls"].setup({
 		},
 	},
 })
+
+lspconfig["gopls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})

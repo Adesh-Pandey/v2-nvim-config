@@ -21,6 +21,10 @@ end
 return lazy.setup({
 	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
 	-- "bluz71/vim-nightfly-guicolors", -- theme
+	"karb94/neoscroll.nvim",
+	"github/copilot.vim",
+	"junegunn/fzf",
+	"scottmackendry/cyberdream.nvim",
 	"Mofiqul/vscode.nvim",
 	"nvim-lua/plenary.nvim",
 	"ThePrimeagen/harpoon",
@@ -98,4 +102,18 @@ return lazy.setup({
 
 	"nvim-lualine/lualine.nvim",
 	require("rusty-guy.plugins.formatting"),
+	{
+		"ray-x/go.nvim",
+		dependencies = { -- optional packages
+			"ray-x/guihua.lua",
+			"neovim/nvim-lspconfig",
+			"nvim-treesitter/nvim-treesitter",
+		},
+		config = function()
+			require("go").setup()
+		end,
+		event = { "CmdlineEnter" },
+		ft = { "go", "gomod" },
+		build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
+	},
 })
