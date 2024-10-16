@@ -22,9 +22,9 @@ return lazy.setup({
 	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
 	-- "bluz71/vim-nightfly-guicolors", -- theme
 	"karb94/neoscroll.nvim",
-	"github/copilot.vim",
-	"junegunn/fzf",
-	"scottmackendry/cyberdream.nvim",
+	-- "github/copilot.vim",
+	-- "junegunn/fzf",
+	-- "scottmackendry/cyberdream.nvim",
 	"Mofiqul/vscode.nvim",
 	"nvim-lua/plenary.nvim",
 	"ThePrimeagen/harpoon",
@@ -107,7 +107,6 @@ return lazy.setup({
 		dependencies = { -- optional packages
 			"ray-x/guihua.lua",
 			"neovim/nvim-lspconfig",
-			"nvim-treesitter/nvim-treesitter",
 		},
 		config = function()
 			require("go").setup()
