@@ -23,7 +23,7 @@ return lazy.setup({
 	-- "bluz71/vim-nightfly-guicolors", -- theme
 	"karb94/neoscroll.nvim",
 	-- "github/copilot.vim",
-	-- "junegunn/fzf",
+	"junegunn/fzf",
 	-- "scottmackendry/cyberdream.nvim",
 	"Mofiqul/vscode.nvim",
 	"nvim-lua/plenary.nvim",
