@@ -1,5 +1,5 @@
--- - local status, _ = pcall(vim.cmd, "colorscheme night-owl")
-
+-- local status, _ = pcall(vim.cmd, "colorscheme night-owl")
+-- local status, _ = pcall(vim.cmd, "colorscheme catppuccin")
 local status, _ = pcall(vim.cmd, "colorscheme rose-pine")
 vim.o.background = "dark"
 -- local status, _ = pcall(vim.cmd, "colorscheme cyberdream")
