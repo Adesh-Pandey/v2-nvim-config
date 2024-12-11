@@ -101,6 +101,7 @@ return lazy.setup({
 	"lewis6991/gitsigns.nvim", -- show line modifications on left hand side
 
 	"nvim-lualine/lualine.nvim",
+    "ray-x/go.nvim",
 	require("rusty-guy.plugins.formatting"),
 	{
 		"ray-x/go.nvim",
