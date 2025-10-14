@@ -1,4 +1,7 @@
 require("telescope").setup({
+	defaults = {
+		file_ignore_patterns = { ".git/", "node_modules/", "dist/", ".cache/" },
+	},
 	extensions = {
 		lazy = {
 			-- Optional theme (the extension doesn't set a default theme)

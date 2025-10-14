@@ -19,13 +19,21 @@ if not status then
 end
 
 return lazy.setup({
+	{
+		"windwp/nvim-ts-autotag",
+		opts = {},
+		event = "InsertEnter",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+	},
 	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
 	-- "bluz71/vim-nightfly-guicolors", -- theme
 	"karb94/neoscroll.nvim",
-	-- "github/copilot.vim",
+	{ "nvim-treesitter/nvim-treesitter" },
+	"github/copilot.vim",
 	"junegunn/fzf",
 	-- "scottmackendry/cyberdream.nvim",
 	"Mofiqul/vscode.nvim",
+	"projekt0n/github-nvim-theme",
 	"nvim-lua/plenary.nvim",
 	"ThePrimeagen/harpoon",
 	{ "rose-pine/neovim", name = "rose-pine" },

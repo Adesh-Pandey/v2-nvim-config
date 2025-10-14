@@ -37,6 +37,11 @@ local on_attach = function(client, bufnr)
 	keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
 	keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts) -- see outline on right hand side
 
+	-- find all references
+
+	keymap.set("n", "gr", function()
+		require("telescope.builtin").lsp_references()
+	end, { desc = "LSP References" })
 	-- typescript specific keymaps (e.g. rename file and update imports)
 	if client.name == "ts_ls" then
 		keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports
@@ -64,7 +69,7 @@ lspconfig["html"].setup({
 
 -- configure typescript server with plugin
 
-lspconfig["tsserver"].setup({
+lspconfig["ts_ls"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
@@ -81,7 +86,6 @@ lspconfig["tailwindcss"].setup({
 	on_attach = on_attach,
 })
 
--- configure tailwindcss server
 lspconfig["clangd"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,

@@ -1,6 +1,6 @@
 local rt = require("rust-tools")
 
-local capabilities = require("cmp_nvim_lsp").default_capabilites()
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 rt.setup({
 	server = {
