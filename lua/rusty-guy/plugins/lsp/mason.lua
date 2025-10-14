@@ -1,4 +1,4 @@
--- import mason plugin safely
+-- import mergingson plugin safely
 local mason_status, mason = pcall(require, "mason")
 if not mason_status then
 	return
@@ -17,7 +17,6 @@ mason.setup()
 
 mason_tool_installer.setup({
 	ensure_installed = {
-		-- "prettier",
 		"stylua",
 		"biome",
 		"gopls",
@@ -29,7 +28,6 @@ mason_lspconfig.setup({
 	-- list of servers for mason to install
 	ensure_installed = {
 		"ts_ls",
-		-- "tsserver",
 		"html",
 		"cssls",
 		"tailwindcss",

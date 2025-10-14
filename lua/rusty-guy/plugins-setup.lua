@@ -34,6 +34,7 @@ return lazy.setup({
 	-- "scottmackendry/cyberdream.nvim",
 	"Mofiqul/vscode.nvim",
 	"projekt0n/github-nvim-theme",
+	"ribru17/bamboo.nvim",
 	"nvim-lua/plenary.nvim",
 	"ThePrimeagen/harpoon",
 	{ "rose-pine/neovim", name = "rose-pine" },
@@ -98,7 +99,6 @@ return lazy.setup({
 			-- { "windwp/nvim-ts-autotag" },
 		},
 	}, -- enhanced lsp uis
-	"jose-elias-alvarez/typescript.nvim", -- additional functionality for typescript server (e.g. rename file & update imports)
 	"onsails/lspkind.nvim", -- vs-code like icons for autocompletion
 
 	-- formatting & linting
@@ -108,8 +108,48 @@ return lazy.setup({
 	-- git integration
 	"lewis6991/gitsigns.nvim", -- show line modifications on left hand side
 
+	{
+		"nvim-tree/nvim-web-devicons",
+		config = function()
+			require("nvim-web-devicons").setup({
+				override = {},
+				default = true,
+			})
+		end,
+	},
 	"nvim-lualine/lualine.nvim",
+	{
+		"goolord/alpha-nvim",
+		config = function()
+			local alpha = require("alpha")
+			local dashboard = require("alpha.themes.dashboard")
+
+			dashboard.section.header.val = {
+				"                                                     ",
+				"                                                     ",
+				"                                                     ",
+				"       ██╗ ██████╗ ██╗     ██╗  ██╗   ██╗          ",
+				"       ██║██╔═══██╗██║     ██║  ╚██╗ ██╔╝          ",
+				"       ██║██║   ██║██║     ██║   ╚████╔╝           ",
+				"  ██╗  ██║██║   ██║██║     ██║    ╚██╔╝            ",
+				"  ╚█████╔╝╚██████╔╝███████╗███████╗██║             ",
+				"   ╚════╝  ╚═════╝ ╚══════╝╚══════╝╚═╝             ",
+				"                                                     ",
+				"                                                     ",
+			}
+
+			dashboard.section.buttons.val = {
+				dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
+				dashboard.button("f", "  Find file", ":Telescope find_files<CR>"),
+				dashboard.button("r", "  Recent files", ":Telescope oldfiles<CR>"),
+				dashboard.button("q", "  Quit", ":qa<CR>"),
+			}
+
+			alpha.setup(dashboard.config)
+		end,
+	},
 	require("rusty-guy.plugins.formatting"),
+	require("rusty-guy.plugins.linting"),
 	{
 		"ray-x/go.nvim",
 		dependencies = { -- optional packages

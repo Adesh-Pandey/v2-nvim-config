@@ -12,8 +12,6 @@ treesitter.setup({
 	},
 	-- enable indentation
 	indent = { enable = true },
-	-- enable autotagging (w/ nvim-ts-autotag plugin)
-	autotag = { enable = true },
 	-- ensure these language parsers are installed
 	ensure_installed = {
 		"json",
@@ -39,3 +37,9 @@ treesitter.setup({
 	-- auto install above language parsers
 	auto_install = true,
 })
+
+-- configure nvim-ts-autotag separately
+local autotag_status, autotag = pcall(require, "nvim-ts-autotag")
+if autotag_status then
+	autotag.setup()
+end

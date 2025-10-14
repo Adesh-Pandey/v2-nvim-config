@@ -12,11 +12,6 @@ if not cmp_nvim_lsp_status then
 	return
 end
 
--- import typescript plugin safely
-local typescript_setup, typescript = pcall(require, "typescript")
-if not typescript_setup then
-	vim.notify("Failed to load ts_ls", vim.log.levels.ERROR) -- Error notification    return
-end
 
 local keymap = vim.keymap -- for conciseness
 
@@ -42,12 +37,6 @@ local on_attach = function(client, bufnr)
 	keymap.set("n", "gr", function()
 		require("telescope.builtin").lsp_references()
 	end, { desc = "LSP References" })
-	-- typescript specific keymaps (e.g. rename file and update imports)
-	if client.name == "ts_ls" then
-		keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports
-		keymap.set("n", "<leader>oi", ":TypescriptOrganizeImports<CR>") -- organize imports (not in youtube nvim video)
-		keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables (not in youtube nvim video)
-	end
 end
 
 -- used to enable autocompletion (assign to every lsp server config)
@@ -55,7 +44,7 @@ local capabilities = cmp_nvim_lsp.default_capabilities()
 
 -- Change the Diagnostic symbols in the sign column (gutter)
 -- (not in youtube nvim video)
-local signs = { Error = " ", Warn = " ", Hint = "ﴞ ", Info = " " }
+local signs = { Error = "✘", Warn = "▲", Hint = "⚑", Info = "●" }
 for type, icon in pairs(signs) do
 	local hl = "DiagnosticSign" .. type
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
@@ -120,6 +109,11 @@ lspconfig["lua_ls"].setup({
 })
 
 lspconfig["gopls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
+lspconfig["biome"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })

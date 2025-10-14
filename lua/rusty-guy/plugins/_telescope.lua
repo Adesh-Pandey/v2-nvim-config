@@ -1,5 +1,15 @@
 require("telescope").setup({
 	defaults = {
+		layout_strategy = "vertical",
+		layout_config = {
+			vertical = {
+				width = 0.9,
+				height = 0.9,
+				preview_height = 0.6,
+				preview_cutoff = 0,
+				mirror = false,
+			},
+		},
 		file_ignore_patterns = { ".git/", "node_modules/", "dist/", ".cache/" },
 	},
 	extensions = {

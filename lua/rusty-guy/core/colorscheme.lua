@@ -1,8 +1,9 @@
 -- local status, _ = pcall(vim.cmd, "colorscheme github_dark")
-local status, _ = pcall(vim.cmd, "colorscheme catppuccin")
+-- local status, _ = pcall(vim.cmd, "colorscheme catppuccin")
 -- local status, _ = pcall(vim.cmd, "colorscheme rose-pine")
 vim.o.background = "dark"
 -- local status, _ = pcall(vim.cmd, "colorscheme cyberdream")
+local status, _ = pcall(vim.cmd, "colorscheme bamboo")
 if not status then
 	print("no colorscheme found")
 	return

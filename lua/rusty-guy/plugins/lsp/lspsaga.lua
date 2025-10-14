@@ -15,6 +15,23 @@ saga.setup({
     colors = {
       normal_bg = "#022746",
     },
+    enable = true,
+    sign = true,
+    virtual_text = true,
+    kind = {},
+  },
+  symbol_in_winbar = {
+    enable = false,
+  },
+  outline = {
+    win_position = "right",
+    win_width = 30,
+    auto_preview = false,
+    detail = false,
+    keys = {
+      toggle_or_jump = "<CR>",
+      quit = "q",
+    },
   },
 })
 
