@@ -25,6 +25,12 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 -- vim-maximizer
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
 
+-- vim-tmux-navigator
+keymap.set("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>")
+keymap.set("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>")
+keymap.set("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>")
+keymap.set("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>")
+
 -- nvim-tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
 
@@ -39,9 +45,7 @@ keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git co
 keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
 keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]
 
-vim.keymap.set("n", "gd", function()
-	require("telescope.builtin").lsp_definitions({ jump_type = "edit" })
-end, { desc = "Go to definition (reuse buffer)" })
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
 
 -- restart lsp server (not on youtube nvim video)
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
